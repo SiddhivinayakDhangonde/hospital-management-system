@@ -1,0 +1,8 @@
+.first{
+       color: rgb(182, 118, 34);
+       border:2px;
+       border-style: groove;
+       background-color: black;
+       margin-top:10px ;
+       padding-left: 30px;
+}
