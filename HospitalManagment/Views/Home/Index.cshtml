@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Bootstrap Container -->
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="row g-0">
+            <!-- Left Image Section -->
+            <div class="col-md-6 position-relative">
+                <h2 class="card-title text-success fw-bold animate__animated animate__fadeInDown text-center mt-3">
+                    Welcome to Our Clinical Appointment System
+                </h2>
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/013/141/034/small_2x/book-doctor-appointment-card-template-schedule-hospital-visit-editable-social-media-post-design-flat-color-illustration-for-poster-web-banner-ecard-vector.jpg"
+                     class="img-fluid rounded-start w-100"
+                     style="height: 100%; object-fit: cover;"
+                     alt="Clinic Welcome Image">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient" style="opacity: 0.3;"></div>
+            </div>
+
+            <!-- Right Text Section -->
+            <div class="col-md-6 bg-white d-flex align-items-center justify-content-center">
+                <div class="card-body text-center">
+                    <p class="card-text fs-5 text-secondary animate__animated animate__fadeInUp mb-4">
+                        If you're new here, please create an account first. Once registered, you'll receive your login credentials to book appointments with ease.
+                    </p>
+                    <a href="/Home/PatientRegistration"
+                       class="btn btn-primary btn-lg mt-3 animate__animated animate__pulse animate__infinite">
+                        Create Account
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional Custom CSS -->
+<style>
+    body {
+        background: linear-gradient(to right, #e3f2fd, #fce4ec);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .bg-gradient {
+        background: linear-gradient(to bottom right, #007bff, #28a745);
+        border-radius: 15px 0 0 15px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 25px; /* smaller padding */
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .card-body {
+        padding: 1rem;
+    }
+</style>

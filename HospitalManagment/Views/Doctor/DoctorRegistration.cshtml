@@ -1,0 +1,120 @@
+﻿@model HospitalManagment.Models.DoctorRegister
+@{
+    Layout = null;
+}
+
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .field-validation-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #005fa3;
+  }
+    input {
+      font-size: 13px;
+    }
+
+    button {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<div class="form-container">
+    <h2>Doctor Registration</h2>
+    <h2>@ViewData["messa"]</h2>
+    @using (Html.BeginForm("DoctorRegistration", "Doctor", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "field-validation-error" })
+        @Html.LabelFor(model => model.name)
+        @Html.TextBoxFor(model => model.name)
+        @Html.ValidationMessageFor(model => model.name)
+
+        @Html.LabelFor(model => model.specilization)
+        @Html.TextBoxFor(model => model.specilization)
+        @Html.ValidationMessageFor(model => model.specilization)
+
+        @Html.LabelFor(model => model.email)
+        @Html.TextBoxFor(model => model.email)
+        @Html.ValidationMessageFor(model => model.email)
+
+        @Html.LabelFor(model => model.phone)
+        @Html.TextBoxFor(model => model.phone)
+        @Html.ValidationMessageFor(model => model.phone)
+
+        @Html.LabelFor(model => model.fees)
+        @Html.TextBoxFor(model => model.fees)
+        @Html.ValidationMessageFor(model => model.fees)
+
+        @Html.LabelFor(model => model.availability)
+        @Html.TextBoxFor(model => model.availability)
+        @Html.ValidationMessageFor(model => model.availability)
+
+        @Html.LabelFor(model => model.password)
+        @Html.TextBoxFor(model => model.password)
+        @Html.ValidationMessageFor(model => model.password)
+
+        <button type="submit">Register</button>
+    }
+</div>

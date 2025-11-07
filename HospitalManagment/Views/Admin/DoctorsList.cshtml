@@ -1,0 +1,63 @@
+﻿@model List<HospitalManagment.Models.DoctorsList>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Doctors List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .action-links a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Doctors List</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Education</th>
+            <th>Phone Number</th>
+            <th>Fees</th>
+            <th>Email</th>
+            <th>Time</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.name</td>
+                <td>@x.specialization</td>
+                <td>@x.phonenumber</td>
+                <td>@x.fees</td>
+                <td>@x.email</td>
+                <td>@x.time</td>
+                <td class="action-links">
+                    <a href="/Admin/DoctorApprove?name=@x.name">Approve</a>
+                    <a href="/Admin/Cancel?name=@x.name">Cancel</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
